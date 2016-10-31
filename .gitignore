@@ -10,3 +10,5 @@ node_modules/
 .tmp/
 .DS_Store
 *.log
+www/css
+www/js
