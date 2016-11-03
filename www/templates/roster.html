@@ -1,36 +1,14 @@
 <ion-view title="Roster" id="page3">
   <ion-content padding="true" class="has-header">
     <ion-list id="roster-list3" class="manual-list-fullwidth">
-      <ion-item href="#/tab/player/1" class="item-thumbnail-left balanced" id="roster-list-item11">
-        <img src="img/kid1.png">
-        <h2balanced>#42 - Daniel Nussbaum
-          <p style="white-space:normal;">Parent 1, Parent 2</p>
-        </h2balanced>
+
+      <ion-item ng-repeat="player in roster" href="#/tab/player/{{player.id}}" class="item-thumbnail-left balanced" id="roster-list-item11">
+        <img ng-src="img/{{player.photo}}.png">
+        <h2balanced>{{player.fname + " " + player.lname}}</h2balanced>
+        <br />
+        <h2>#{{player.player_number}}</h2>
       </ion-item>
-      <ion-item href="#/tab/player/1" class="item-thumbnail-left balanced" id="roster-list-item16">
-        <img src="img/kid2.png">
-        <h2balanced>#12 - Sonia Nigam
-          <p style="white-space:normal;">Parent 1, Parent 2</p>
-        </h2balanced>
-      </ion-item>
-      <ion-item href="#/tab/player/1" class="item-thumbnail-left balanced" id="roster-list-item17">
-        <img src="img/kid3.png">
-        <h2balanced>#2 - Rudolf Newman
-          <p style="white-space:normal;">Parent 1, Parent 2</p>
-        </h2balanced>
-      </ion-item>
-      <ion-item href="#/tab/player/1" class="item-thumbnail-left balanced" id="roster-list-item18">
-        <img src="img/kid4.png">
-        <h2balanced>#5 - Hillary Clinton
-          <p style="white-space:normal;">Parent 1, Parent 2</p>
-        </h2balanced>
-      </ion-item>
-      <ion-item href="#/tab/player/1" class="item-thumbnail-left balanced" id="roster-list-item19">
-        <img src="img/kid5.png">
-        <h2balanced>#7 - Donald Trump
-          <p style="white-space:normal;">Parent 1, Parent 2</p>
-        </h2balanced>
-      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-view>

@@ -18,7 +18,7 @@ $scope.roster = {};
 		params: {team_id: 1}
 
 	}).then(function(response){
-		$scope.roster = response;
+		$scope.roster = response.data;
 	});
 
 }])
@@ -49,7 +49,7 @@ $scope.playerid = $stateParams.playerid
 		params: {player_id: $scope.playerid}
 
 	}).then(function(response){
-		$scope.players = response;
+		$scope.players = response.data;
 	});
 
 }]);
