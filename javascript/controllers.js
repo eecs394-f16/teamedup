@@ -8,18 +8,17 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('rosterCtrl', ['$scope','$stateParams', '$http', function($scope, $http), // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('rosterCtrl', ['$scope','$stateParams', '$http', function($scope, $stateParams, $http) { // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 $scope.roster = {};
-function ($scope, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_roster.php',
 		params: {team_id: 1}
-		
+
 	}).then(function(response){
-		$scope.roster = response;		
+		$scope.roster = response;
 	});
 
 }])
@@ -40,17 +39,17 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('playerCtrl', ['$scope', '$stateParams','$http', function($scope, $http),
+.controller('playerCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
 $scope.players = {};
 $scope.playerid = $stateParams.playerid
 
-function ($scope, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_parents.php',
 		params: {player_id: $scope.playerid}
-		
+
 	}).then(function(response){
-		$scope.players = response;		
+		$scope.players = response;
 	});
+
 }]);
