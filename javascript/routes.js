@@ -10,7 +10,7 @@ angular.module('app.routes', [])
 
 
 
-      .state('tabsController.calendar', {
+  .state('tabsController.calendar', {
     url: '/cal',
     views: {
       'tab1': {
@@ -30,6 +30,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('tabsController.player', {
+    url: '/player/:playerid',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/player.html',
+        controller: 'playerCtrl'
+      }
+    }
+  })
+
   .state('tabsController.messages', {
     url: '/messages',
     views: {
@@ -44,7 +54,7 @@ angular.module('app.routes', [])
     url: '/tab',
     templateUrl: 'templates/tabsController.html',
     abstract:true
-  })
+});
 
 $urlRouterProvider.otherwise('/tab/roster')
 
