@@ -40,7 +40,7 @@ function ($scope, $stateParams) {
 }])
 
 .controller('playerCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
-$scope.players = {};
+$scope.parents = {};
 $scope.playerid = $stateParams.playerid
 
 	$http({
@@ -49,7 +49,7 @@ $scope.playerid = $stateParams.playerid
 		params: {player_id: $scope.playerid}
 
 	}).then(function(response){
-		$scope.players = response.data;
+		$scope.parents = response.data;
 	});
 
 }]);
