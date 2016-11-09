@@ -23,10 +23,28 @@ $scope.roster = {};
 
 }])
 
-.controller('messagesCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('messagesCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+	$scope.messages = [];
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_messages.php?team_id=1',
+	}).then(function(response){
+		$scope.messages = response.data;
+	});
+
+	$scope.inputText = "";
+	$scope.postM = function(){
+		console.log($scope.inputText);
+
+		// $http({
+		// method: 'POST',
+		// url: 'http://teamedup.nudm.org/post_message.php',
+		// params: {message: $scope.inputText, team_id:1}
+
+		// })
+	}
 
 
 }])
@@ -34,7 +52,7 @@ function ($scope, $stateParams) {
 .controller('teamsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+	function ($scope, $stateParams) {
 
 
 }])
@@ -53,3 +71,5 @@ $scope.playerid = $stateParams.playerid
 	});
 
 }]);
+
+

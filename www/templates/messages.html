@@ -3,17 +3,21 @@
     <div class="list card" id="messages-card21">
       <form id="messages-form2" class="list">
         <label class="item item-input" id="messages-textarea3">
-          <span class="input-label"></span><textarea placeholder="message"></textarea></label>
+          <span class="input-label"></span><textarea ng-model="inputText" placeholder="message" ng-keyup="$event.keyCode == 13 ? postM() : null"></textarea>
+        </label>
       </form>
     </div>
-    <div class="list card" id="messages-card22">
+
+    <div class="list card" ng-repeat="message in messages">
       <div class="item item-body" id="messages-list-item-container4">
         <div id="messages-markdown4" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">
-            <strong>Daniel Nussbaum</strong>
+            <strong>{{message.fname + " " + message.lname}}</strong>
           </p>
 
-          <p style="color:#000000;">test message asdfojasdfajsdfas;ldfjasdl;kfjasdfl;ajsdfl;kajsd asdfasdfasd fsadfasdf sad
+          <p style="color:#000000;">{{message.message}}
+          </p>
+          <p style="color:#a0a0a0;">{{message.created_at}}
           </p>
         </div>
       </div>
