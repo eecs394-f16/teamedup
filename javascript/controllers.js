@@ -35,16 +35,17 @@ $scope.roster = {};
 	});
 
 	$scope.inputText = "";
-	$scope.postM = function(){
-		console.log($scope.inputText);
+	$scope.postM = function(text){
+		
 
-		// $http({
-		// method: 'POST',
-		// url: 'http://teamedup.nudm.org/post_message.php',
-		// params: {message: $scope.inputText, team_id:1}
+			$http({
+			method: 'POST',
+			url: 'http://teamedup.nudm.org/post_message.php',
+			params: {message: text, team_id:1}
 
-		// })
-	}
+			 })
+			
+	};
 
 
 }])

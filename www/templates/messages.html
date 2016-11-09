@@ -3,7 +3,7 @@
     <div class="list card" id="messages-card21">
       <form id="messages-form2" class="list">
         <label class="item item-input" id="messages-textarea3">
-          <span class="input-label"></span><textarea ng-model="inputText" placeholder="message" ng-keyup="$event.keyCode == 13 ? postM() : null"></textarea>
+          <span class="input-label"></span><textarea ng-model="inputText" placeholder="message" id='inputB' ng-keyup="$event.keyCode == 13 ? postM(inputText) : null"></textarea>
         </label>
       </form>
     </div>
