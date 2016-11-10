@@ -34,13 +34,13 @@ $scope.roster = {};
 		$scope.messages = response.data;
 	});
 
-	$scope.inputText = "";
-	$scope.postM = function(text){
+	$scope.inputb={};
+	$scope.postM = function(){
 
 			$http({
 			method: 'GET',
 			url: 'http://teamedup.nudm.org/post_message.php',
-			params: {message: text, team_id:1}
+			params: {message: $scope.inputb.text, team_id:1}
 		});
 
 		$http({
@@ -49,7 +49,8 @@ $scope.roster = {};
 		}).then(function(response){
 			$scope.messages = response.data;
 		});
-
+		
+		$scope.inputb.text='';
 	};
 
 
