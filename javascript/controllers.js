@@ -49,7 +49,7 @@ $scope.roster = {};
 		}).then(function(response){
 			$scope.messages = response.data;
 		});
-		
+
 		$scope.inputb.text='';
 	};
 
@@ -74,7 +74,8 @@ $scope.playerid = $stateParams.playerid
 		params: {player_id: $scope.playerid}
 
 	}).then(function(response){
-		$scope.parents = response.data;
+		$scope.parents = response.data.parents;
+		$scope.player = response.data.player;
 	});
 
 }]);
