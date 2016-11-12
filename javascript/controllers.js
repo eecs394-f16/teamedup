@@ -1,21 +1,20 @@
 angular.module('app.controllers', [])
 
-.controller('calendarCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('tabsCtrl', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
+	$rootScope.team_id = $stateParams.team_id;
+}])
+
+.controller('calendarCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
 
 }])
 
-.controller('rosterCtrl', ['$scope','$stateParams', '$http', function($scope, $stateParams, $http) { // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-$scope.roster = {};
+.controller('rosterCtrl', ['$scope', '$rootScope', '$stateParams', '$http', function($scope, $rootScope, $stateParams, $http) {
+	$scope.roster = {};
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_roster.php',
-		params: {team_id: 1}
+		params: {team_id: $rootScope.team_id}
 
 	}).then(function(response){
 		$scope.roster = response.data;
@@ -24,12 +23,10 @@ $scope.roster = {};
 }])
 
 .controller('messagesCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
 	$scope.messages = [];
 	$http({
 		method: 'GET',
-		url: 'http://teamedup.nudm.org/get_messages.php?team_id=1',
+		url: 'http://teamedup.nudm.org/get_messages.php?team_id=' + $rootScope.team_id,
 	}).then(function(response){
 		$scope.messages = response.data;
 	});
@@ -45,7 +42,7 @@ $scope.roster = {};
 
 		$http({
 			method: 'GET',
-			url: 'http://teamedup.nudm.org/get_messages.php?team_id=1',
+			url: 'http://teamedup.nudm.org/get_messages.php?team_id=' + $rootScope.team_id,
 		}).then(function(response){
 			$scope.messages = response.data;
 		});
@@ -56,10 +53,7 @@ $scope.roster = {};
 
 }])
 
-.controller('teamsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-	function ($scope, $stateParams) {
+.controller('teamsCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
 
 }])

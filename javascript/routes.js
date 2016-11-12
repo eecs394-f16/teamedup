@@ -51,12 +51,12 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController', {
-    url: '/tab',
+    url: '/:team_id/tab',
     templateUrl: 'templates/tabsController.html',
-    abstract:true
+    controller: 'tabsCtrl'
 });
 
-$urlRouterProvider.otherwise('/tab/roster')
+$urlRouterProvider.otherwise('/1/tab/roster')
 
 
 
