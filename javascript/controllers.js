@@ -43,7 +43,7 @@ angular.module('app.controllers', [])
 			$http({
 			method: 'GET',
 			url: 'http://teamedup.nudm.org/post_message.php',
-			params: {message: $scope.inputb.text, team_id:1}
+			params: {message: $scope.inputb.text, team_id: $rootScope.team_id}
 		});
 
 		$http({
@@ -56,22 +56,31 @@ angular.module('app.controllers', [])
 		$scope.inputb.text='';
 	};
 
-
 }])
 
-.controller('teamsCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+.controller('teamsCtrl', ['$scope', '$rootScope', '$window', '$http', '$stateParams', function ($scope, $rootScope, $window, $http, $stateParams) {
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_teams.php',
+	}).then(function(response){
+		$scope.teams = response.data;
+	});
 
-
+	$scope.changeTeam = function(team_id) {
+		$rootScope.team_id = team_id;
+		window.location = "/#/" + team_id + "/tab";
+		$window.location.reload(true);
+	}
 }])
 
-.controller('playerCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
+.controller('playerCtrl', ['$scope', '$rootScope', '$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {
 $scope.parents = {};
 $scope.playerid = $stateParams.playerid
 
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_parents.php',
-		params: {player_id: $scope.playerid}
+		params: {player_id: $scope.playerid, team_id: $rootScope.team_id}
 
 	}).then(function(response){
 		$scope.parents = response.data.parents;
