@@ -2,6 +2,7 @@ angular.module('app.controllers', [])
 
 .controller('tabsCtrl', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
 	$rootScope.team_id = $stateParams.team_id;
+	$scope.team_id = $stateParams.team_id;
 }])
 
 .controller('calendarCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
