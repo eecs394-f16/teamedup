@@ -28,7 +28,7 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('messagesCtrl', ['$scope', '$stateParams','$http', function($scope, $stateParams, $http) {
+.controller('messagesCtrl', ['$scope', '$rootScope','$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {
 	$scope.messages = [];
 	$http({
 		method: 'GET',
