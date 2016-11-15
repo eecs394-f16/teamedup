@@ -5,13 +5,27 @@ angular.module('app.controllers', [])
 	$scope.team_id = $stateParams.team_id;
 }])
 
-.controller('calendarCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+.controller('calendarCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_schedule.php',
+		params: {team_id: $rootScope.team_id}
 
+	}).then(function(response){
+		$scope.schedule = response.data;
+	});
 
 }])
 
-.controller('eventCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+.controller('eventCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_event.php',
+		params: {team_id: $rootScope.team_id, event_id: $stateParams.eventid}
 
+	}).then(function(response){
+		$scope.event = response.data;
+	});
 
 }])
 

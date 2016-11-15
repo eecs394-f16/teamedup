@@ -1,17 +1,9 @@
 <ion-view title="Schedule" id="page2">
   <ion-content padding="true" class="has-header">
     <ion-list id="calendar-list7">
-      <ion-item href="#/{{team_id}}/tab/event/1" class="calendar-list-item">
-          <strong>Practice</strong><br />
-          November 10
-      </ion-item>
-      <ion-item href="#/{{team_id}}/tab/event/1" class="calendar-list-item">
-          <strong>Game</strong><br />
-          November 10
-      </ion-item>
-      <ion-item href="#/{{team_id}}/tab/event/1" class="calendar-list-item">
-          <strong>Practice</strong><br />
-          November 10
+      <ion-item ng-repeat="event in schedule" href="#/{{team_id}}/tab/event/{{event.id}}" class="calendar-list-item">
+          <strong>{{event.name}}</strong><br />
+          {{event.at}}
       </ion-item>
     </ion-list>
   </ion-content>
