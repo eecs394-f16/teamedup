@@ -20,6 +20,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('tabsController.event', {
+    url: '/event/:eventid',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/event.html',
+        controller: 'eventCtrl'
+      }
+    }
+  })
+
   .state('tabsController.roster', {
     url: '/roster',
     views: {

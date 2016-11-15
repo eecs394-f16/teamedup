@@ -10,6 +10,11 @@ angular.module('app.controllers', [])
 
 }])
 
+.controller('eventCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+
+
+}])
+
 .controller('rosterCtrl', ['$scope', '$rootScope', '$stateParams', '$http', function($scope, $rootScope, $stateParams, $http) {
 	$scope.roster = {};
 	$http({
