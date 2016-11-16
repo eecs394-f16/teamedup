@@ -5,6 +5,20 @@ angular.module('app.controllers', [])
 	$scope.team_id = $stateParams.team_id;
 }])
 
+.controller('teamsCtrl', ['$scope', '$state', '$rootScope', '$window', '$http', '$stateParams', function ($scope, $state, $rootScope, $window, $http, $stateParams) {
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_teams.php',
+	}).then(function(response){
+		$scope.teams = response.data;
+	});
+
+	$scope.changeTeam = function(team_id) {
+		$rootScope.team_id = team_id;
+		$state.go("tabsController.roster", {"team_id": $rootScope.team_id})
+	}
+}])
+
 .controller('calendarCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
 	$http({
 		method: 'GET',
@@ -72,24 +86,9 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('teamsCtrl', ['$scope', '$rootScope', '$window', '$http', '$stateParams', function ($scope, $rootScope, $window, $http, $stateParams) {
-	$http({
-		method: 'GET',
-		url: 'http://teamedup.nudm.org/get_teams.php',
-	}).then(function(response){
-		$scope.teams = response.data;
-	});
-
-	$scope.changeTeam = function(team_id) {
-		$rootScope.team_id = team_id;
-		window.location = "/#/" + team_id + "/tab";
-		$window.location.reload(true);
-	}
-}])
-
 .controller('playerCtrl', ['$scope', '$rootScope', '$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {
 $scope.parents = {};
-$scope.playerid = $stateParams.playerid
+$scope.playerid = $stateParams.playerid;
 
 	$http({
 		method: 'GET',
