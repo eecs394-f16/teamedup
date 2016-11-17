@@ -55,7 +55,8 @@ angular.module('app.controllers', [])
 		params: {team_id: $rootScope.team_id}
 
 	}).then(function(response){
-		$scope.roster = response.data;
+		$scope.roster = response.data.roster;
+		$scope.team = response.data.team;
 	});
 
 }])

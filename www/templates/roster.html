@@ -4,7 +4,7 @@
       </ion-nav-title>
   <ion-content padding="false" class="has-header">
 	<div class = "image-container">
-		<div class = "title"> Team Name </div>
+		<div class = "title"> {{team.name}} </div>
 	</div>
     <ion-list id="roster-list3" class="manual-list-fullwidth">
 
@@ -13,7 +13,7 @@
         <img ng-src="img/{{player.photo}}.png">
         <h2balanced>{{player.fname + " " + player.lname}}</h2balanced>
         <br />
-        <h2>#{{player.player_number}}</h2>
+        <h2 class="playerNum">#{{player.player_number}}</h2>
       </ion-item>
 
     </ion-list>
