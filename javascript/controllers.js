@@ -29,10 +29,6 @@ angular.module('app.controllers', [])
 		$scope.schedule = response.data;
 	});
 
-	$scope.launchDirections = function(address) {
-		window.location.href = "maps://maps.apple.com/?daddr=" + address;
-	}
-
 }])
 
 .controller('eventCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
@@ -44,6 +40,11 @@ angular.module('app.controllers', [])
 	}).then(function(response){
 		$scope.event = response.data;
 	});
+
+	$scope.launchDirections = function(address) {
+		//alert("working");
+		window.location.href = "maps://maps.apple.com/?daddr=" + address;
+	}
 
 }])
 

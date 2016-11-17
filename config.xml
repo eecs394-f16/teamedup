@@ -11,6 +11,8 @@
   <access origin="*"/>
   <access launch-external="yes" origin="tel:*"/>
   <access launch-external="yes" origin="sms:*"/>
+  <access launch-external="yes" origin="maps:*"/>
+
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
