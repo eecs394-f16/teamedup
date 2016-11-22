@@ -11,8 +11,8 @@
 
       <ion-item ng-repeat="player in roster" href="#/{{team_id}}/tab/player/{{player.id}}" class="balanced item-avatar" id="roster-list-item11">
         <img ng-src="img/{{player.photo}}.png">
-        <h2balanced>{{player.fname + " " + player.lname}}</h2balanced>
-        <br />
+        <h2balanced class="player">{{player.fname + " " + player.lname}}</h2balanced>
+        
         <h2 class="playerNum">#{{player.player_number}}</h2>
       </ion-item>
 

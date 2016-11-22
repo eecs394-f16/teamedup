@@ -48,6 +48,9 @@ body {
 h2.playerNum{
     font-size: 40px;
     font-weight: 400;
+    position: absolute;
+    top:20px;
+    right: 30px;
 }
 .item-avatar .item-content>img:first-child{
     max-width: 60px;
@@ -58,4 +61,22 @@ h2.playerNum{
 .item-avatar .item-content{
     padding-left: 85px;
 min-height: 80px;
+}
+.team-item{
+    width: 94%;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    margin-left: 3%
+}
+.grey{
+    background-color: #EFEFEF;
+}
+.dark-grey{
+    background-color: #CCCCCC;
+    color: #000000;
+}
+h2balanced.player{
+   color: #000;
+   height :50px;
+   font-size: 28px;
 }

@@ -1,15 +1,15 @@
 <ion-view title="Messages" id="page4">
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="messages-card21">
+    <div class="list card" id="messages-card21" >
       <form id="messages-form2" class="list">
-        <label class="item item-input" id="messages-textarea3">
-          <textarea ng-model="inputb.text" placeholder="write your message" ng-keyup="$event.keyCode == 13 ? postM() : null"></textarea>
+        <label class="item item-input dark-grey" id="messages-textarea3" >
+          <textarea ng-model="inputb.text" placeholder="write your message" ng-keyup="$event.keyCode == 13 ? postM() : null" class="dark-grey"></textarea>
         </label>
       </form>
     </div>
 
     <div class="list card" ng-repeat="message in messages">
-      <div class="item item-body" id="messages-list-item-container4">
+      <div class="item item-body  grey" id="messages-list-item-container4">
         <div id="messages-markdown4" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">
             <strong>{{message.fname + " " + message.lname}}</strong>

@@ -62,13 +62,13 @@
       </ion-nav-bar>
       <ion-nav-view></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left" id="side-menu21" style="background-color:#EB7E77;">
+    <ion-side-menu side="left" id="side-menu21" style="background-color:#EFEFEF;">
       <ion-header-bar class="bar-balanced">
         <div class="title">Teams</div>
       </ion-header-bar>
       <ion-content ng-controller="teamsCtrl" padding="false" class="side-menu-left has-header ">
         <ion-list ng-repeat="team in teams">
-          <ion-item menu-close="" ng-click="changeTeam(team.id)">{{team.name}}</ion-item>
+          <ion-item menu-close="" ng-click="changeTeam(team.id)" class="team-item">{{team.name}}</ion-item>
         </ion-list>
       </ion-content>
     </ion-side-menu>
