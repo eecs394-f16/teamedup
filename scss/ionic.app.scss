@@ -40,17 +40,29 @@ body {
 }
 
 .title.title-left {
-	position: static;
-	margin-right: 25%;
+    position: static;
+    margin-right: 25%;
     width: 50%;
     margin-left: auto;
-	font-size: 30px;
+    font-size: 30px;
     text-align: center;
 }
 .bar .title.title-left{
     text-align: center;
     height: auto;
     line-height: 38px;
+}
+.title-team{
+    position: absolute;;
+    bottom: 10px;
+    left: 10px;
+    font-size: 30px;
+}
+#messages-card21{
+    padding: 0px;
+}
+#messages-form2{
+    padding: 0px;
 }
 h2.playerNum{
     font-size: 40px;
@@ -82,8 +94,10 @@ min-height: 80px;
     background-color: #CCCCCC;
     color: #000000;
 }
-h2balanced.player{
+h2balanced.player.ng-binding{
    color: #000;
-   height :50px;
-   font-size: 28px;
+   height :100%;
+   line-height: 50px;
+   vertical-align: middle;
+   font-size: 22px;
 }
