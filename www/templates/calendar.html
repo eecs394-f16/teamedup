@@ -1,9 +1,9 @@
 <ion-view title="Schedule" id="page2">
   <ion-content padding="true" class="has-header">
     <ion-list id="calendar-list7">
-      <ion-item ng-repeat="event in schedule" href="#/{{team_id}}/tab/event/{{event.id}}" class="calendar-list-item">
+      <ion-item ng-repeat="event in schedule" href="#/{{team_id}}/tab/event/{{event.id}}" class="calendar-list-item calendar-item">
           <strong>{{event.name}}</strong><br />
-          {{event.at}}
+          {{formatDateTime(event.at)}}
       </ion-item>
     </ion-list>
   </ion-content>

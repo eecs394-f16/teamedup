@@ -29,9 +29,15 @@ angular.module('app.controllers', [])
 		$scope.schedule = response.data;
 	});
 
+	$scope.formatDateTime = function(datetime) {
+		return moment(datetime).format('MMMM Do, h:mm a');
+	}
+
 }])
 
-.controller('eventCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+.controller('eventCtrl',
+	['$scope', '$rootScope', '$http', '$stateParams',
+	function ($scope, $rootScope, $http, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_event.php',
@@ -42,8 +48,16 @@ angular.module('app.controllers', [])
 	});
 
 	$scope.launchDirections = function(address) {
-		//alert("working");
+		console.log(address);
 		window.location.href = "maps://maps.apple.com/?daddr=" + address;
+	}
+
+	$scope.formatTime = function(datetime) {
+		return moment(datetime).format('h:mm a');
+	}
+
+	$scope.formatDate = function(datetime) {
+		return moment(datetime).format('MMMM Do');
 	}
 
 }])
@@ -73,22 +87,25 @@ angular.module('app.controllers', [])
 
 	$scope.inputb={};
 	$scope.postM = function(){
-
-			$http({
-			method: 'GET',
+		$http({
+			method: "GET",
 			url: 'http://teamedup.nudm.org/post_message.php',
 			params: {message: $scope.inputb.text, team_id: $rootScope.team_id}
 		});
 
 		$http({
-			method: 'GET',
-			url: 'http://teamedup.nudm.org/get_messages.php?team_id=' + $rootScope.team_id,
+			method: "GET",
+			url: "http://teamedup.nudm.org/get_messages.php?team_id=" + $rootScope.team_id,
 		}).then(function(response){
 			$scope.messages = response.data;
 		});
 
-		$scope.inputb.text='';
+		$scope.inputb.text="";
 	};
+
+	$scope.formatDateTime = function(datetime) {
+		return moment(datetime).calendar();
+	}
 
 }])
 

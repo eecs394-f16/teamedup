@@ -101,7 +101,7 @@ h2.playerNum{
 }
 
 .item {
-    &.roster-item {
+    &.roster-item, &.calendar-item {
         margin: 5px 0px;
 
         >.item-content {
@@ -109,6 +109,11 @@ h2.playerNum{
             min-height: 90px;
         }
     }
+
+    &.parent-item {
+        background: #F2F2F2;
+    }
+
 }
 
 #messages-box {
@@ -117,4 +122,22 @@ h2.playerNum{
     }
 
     color: #414142;
+}
+
+.player-box {
+    text-align: center;
+    max-height: 100px;
+    margin-bottom: 30px;
+    background: #CCCCCC;
+    padding: 20px;
+}
+
+.parent-name {
+    font-size: 20px;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.parent-contact {
+    float: right;
 }
