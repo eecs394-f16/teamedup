@@ -32,7 +32,6 @@ angular.module('app.routes', [])
 
   .state('tabsController.roster', {
     url: '/roster',
-    cache:false,
     views: {
       'tab2': {
         templateUrl: 'templates/roster.html',
@@ -43,7 +42,6 @@ angular.module('app.routes', [])
 
   .state('tabsController.player', {
     url: '/player/:playerid',
-    cache:false,
     views: {
       'tab2': {
         templateUrl: 'templates/player.html',
@@ -54,7 +52,6 @@ angular.module('app.routes', [])
 
   .state('tabsController.messages', {
     url: '/messages',
-    cache:false,
     views: {
       'tab3': {
         templateUrl: 'templates/messages.html',
@@ -65,7 +62,6 @@ angular.module('app.routes', [])
 
   .state('tabsController', {
     url: '/:team_id/tab',
-    cache:false,
     templateUrl: 'templates/tabsController.html',
     controller: 'tabsCtrl'
 });
