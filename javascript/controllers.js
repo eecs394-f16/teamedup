@@ -1,11 +1,15 @@
 angular.module('app.controllers', [])
 
-.controller('tabsCtrl', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
+.controller('tabsCtrl',
+['$scope', '$rootScope', '$stateParams',
+function ($scope, $rootScope, $stateParams) {
 	$rootScope.team_id = $stateParams.team_id;
 	$scope.team_id = $stateParams.team_id;
 }])
 
-.controller('teamsCtrl', ['$scope', '$state', '$rootScope', '$window', '$http', '$stateParams', function ($scope, $state, $rootScope, $window, $http, $stateParams) {
+.controller('teamsCtrl',
+['$scope', '$state', '$rootScope', '$window', '$http', '$stateParams',
+function ($scope, $state, $rootScope, $window, $http, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_teams.php',
@@ -19,7 +23,9 @@ angular.module('app.controllers', [])
 	}
 }])
 
-.controller('calendarCtrl', ['$scope', '$rootScope', '$http', '$stateParams', function ($scope, $rootScope, $http, $stateParams) {
+.controller('calendarCtrl',
+['$scope', '$rootScope', '$http', '$stateParams',
+function ($scope, $rootScope, $http, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_schedule.php',
@@ -36,8 +42,8 @@ angular.module('app.controllers', [])
 }])
 
 .controller('eventCtrl',
-	['$scope', '$rootScope', '$http', '$stateParams',
-	function ($scope, $rootScope, $http, $stateParams) {
+['$scope', '$rootScope', '$http', '$stateParams',
+function ($scope, $rootScope, $http, $stateParams) {
 	$http({
 		method: 'GET',
 		url: 'http://teamedup.nudm.org/get_event.php',
@@ -62,7 +68,9 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('rosterCtrl', ['$scope', '$rootScope', '$stateParams', '$http', function($scope, $rootScope, $stateParams, $http) {
+.controller('rosterCtrl',
+['$scope', '$rootScope', '$stateParams', '$http',
+function($scope, $rootScope, $stateParams, $http) {
 	$scope.roster = {};
 	$http({
 		method: 'GET',
@@ -76,7 +84,9 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('messagesCtrl', ['$scope', '$rootScope','$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {
+.controller('messagesCtrl',
+['$scope', '$rootScope','$stateParams','$http',
+function($scope, $rootScope, $stateParams, $http) {
 	$scope.messages = [];
 	$http({
 		method: 'GET',
@@ -114,9 +124,11 @@ angular.module('app.controllers', [])
 
 }])
 
-.controller('playerCtrl', ['$scope', '$rootScope', '$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {
-$scope.parents = {};
-$scope.playerid = $stateParams.playerid;
+.controller('playerCtrl',
+['$scope', '$rootScope', '$stateParams','$http',
+function($scope, $rootScope, $stateParams, $http) {
+	$scope.parents = {};
+	$scope.playerid = $stateParams.playerid;
 
 	$http({
 		method: 'GET',
