@@ -54,11 +54,10 @@ body {
     left: 10px;
     font-size: 30px;
 }
+
 #messages-card21{
-    padding: 0px;
-}
-#messages-form2{
-    padding: 0px;
+    padding: 10px;
+    background: #CCCCCC;
 }
 
 .item-avatar .item-content>img:first-child{
@@ -110,4 +109,12 @@ h2.playerNum{
             min-height: 90px;
         }
     }
+}
+
+#messages-box {
+    &::-webkit-input-placeholder {
+        color: #414142;
+    }
+
+    color: #414142;
 }
