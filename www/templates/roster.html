@@ -3,16 +3,16 @@
         <img height="30" style="height:30px; margin-top:7px" src="img/logo.png">
       </ion-nav-title>
   <ion-content padding="false" class="has-header">
-	<div class = "image-container">
+	<div class="image-container" style="background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.7)), url('/img/{{team.photo}}'); background-size:cover;">
 		<div class = "title"> {{team.name}} </div>
 	</div>
     <ion-list id="roster-list3" class="manual-list-fullwidth">
 
 
       <ion-item ng-repeat="player in roster" href="#/{{team_id}}/tab/player/{{player.id}}" class="balanced item-avatar" id="roster-list-item11">
-        <img ng-src="img/{{player.photo}}.png">
+        <img ng-src="img/{{player.photo}}">
         <h2balanced class="player">{{player.fname + " " + player.lname}}</h2balanced>
-        
+
         <h2 class="playerNum">#{{player.player_number}}</h2>
       </ion-item>
 
