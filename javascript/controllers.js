@@ -107,6 +107,11 @@ angular.module('app.controllers', [])
 		return moment(datetime).calendar();
 	}
 
+	$scope.toggleComments = function(index) {
+		var message = $scope.messages[index];
+		message.show_comments = !message.show_comments;
+	}
+
 }])
 
 .controller('playerCtrl', ['$scope', '$rootScope', '$stateParams','$http', function($scope, $rootScope, $stateParams, $http) {

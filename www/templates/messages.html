@@ -1,24 +1,39 @@
 <ion-view title="Message Board" id="page4">
   <ion-content padding="true" class="has-header">
-    <div class="list card" id="messages-card21" >
+    <div class="list card" id="messages-card21">
       <form id="messages-form2" class="list">
-        <label class="item item-input dark-grey" id="messages-textarea3" >
+        <label class="item item-input dark-grey" id="messages-textarea3">
           <textarea id="messages-box" ng-model="inputb.text" placeholder="write your message" ng-keyup="$event.keyCode == 13 ? postM() : null" class="dark-grey"></textarea>
         </label>
       </form>
     </div>
 
     <div class="list card" ng-repeat="message in messages">
-      <div class="item item-body  grey" id="messages-list-item-container4">
+      <div class="item dark-grey">
+        <h2>{{message.fname + " " + message.lname}}</h2>
+      </div>
+      <div class="item item-body grey" id="messages-list-item-container4">
         <div id="messages-markdown4" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-            <strong>{{message.fname + " " + message.lname}}</strong>
+          <p>{{message.message}}</p>
+          <p>
+            <a href="#" class="subdued">{{formatDateTime(message.created_at)}}</a>
+            <a ng-click="toggleComments($index)" href="#" class="subdued"><i ng-class="message.show_comments ? 'ion-chevron-down' : 'ion-chevron-up'" class="icon"></i>
+ Comments</a>
           </p>
-
-          <p style="color:#000000;">{{message.message}}
-          </p>
-          <p style="color:#a0a0a0;">{{formatDateTime(message.created_at)}}
-          </p>
+        </div>
+      </div>
+      <div class="comments-area" ng-show="message.show_comments">
+        <div ng-repeat="comment in message.comments" class="item item-divider item-text-wrap">
+            <h2>{{comment.fname + " " + comment.lname}}</h2>
+            <p>
+              {{comment.comment}}
+            </p>
+            <p>
+                <a href="#" class="subdued">{{formatDateTime(comment.created_at)}}</a>
+            </p>
+        </div>
+        <div class="item item-divider item-input">
+          <input type="text" placeholder="Write a comment...">
         </div>
       </div>
     </div>
