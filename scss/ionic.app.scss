@@ -142,36 +142,55 @@ h2.playerNum{
     float: right;
 }
 .coach-main{
-    height:190px;
+    height:150px;
     width: 100%;
     display: inline-block;
-
+    background-color: #EEEEEE;
+    margin-bottom: 70px;
 }
 .coach-main >img {
-    width: 150px;
-    height: 150px;
-    margin:  50px 20px;
+    position: absolute;
+    left: 45px;
+    top:80px;
+    width: 120px;
+    height: 120px;
+    
     overflow: hidden;
     border-radius: 50%;
 
 
 }
-.coach-main >h1 {
-    font-size: 22px;
-    position: absolute;
-    left: 180px;
-    top: 90px;
+.coach-name{
+
+    position: relative;
+    height: 25px;
+    
+    width: 50%;
+    margin-left: 160px;
+    margin-top: 125px;
+    margin-right: 10px;
+    
 }
+.coach-name >h1 {
+    font-size: 22px;
+    line-height: 24px;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    height: 100%;
+    }
 .coach-main >h2 {
     font-size: 16px;
     display: inline-block;
     position: absolute;
     left: 180px;
-    top: 140px;
+    top: 170px;
 }
 .coach-bio{
     width: 80%;
     margin: 0 10%;
+    white-space: normal;
+    line-height: 26px;
 }
 .coach-contact{
     width: 80%;
@@ -181,5 +200,5 @@ h2.playerNum{
 .button{
     border-radius: 50%;
     margin-right: 20px;
-    
+
 }
