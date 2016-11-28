@@ -141,3 +141,45 @@ h2.playerNum{
 .parent-contact {
     float: right;
 }
+.coach-main{
+    height:190px;
+    width: 100%;
+    display: inline-block;
+
+}
+.coach-main >img {
+    width: 150px;
+    height: 150px;
+    margin:  50px 20px;
+    overflow: hidden;
+    border-radius: 50%;
+
+
+}
+.coach-main >h1 {
+    font-size: 22px;
+    position: absolute;
+    left: 180px;
+    top: 90px;
+}
+.coach-main >h2 {
+    font-size: 16px;
+    display: inline-block;
+    position: absolute;
+    left: 180px;
+    top: 140px;
+}
+.coach-bio{
+    width: 80%;
+    margin: 0 10%;
+}
+.coach-contact{
+    width: 80%;
+    margin: 35px 10%;
+
+}
+.button{
+    border-radius: 50%;
+    margin-right: 20px;
+
+}

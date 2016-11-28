@@ -54,6 +54,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('tabsController.coach', {
+    url: '/coaches',
+    views: {
+      'tab4': {
+        templateUrl: 'templates/coach.html',
+        controller: 'coachCtrl'
+      }
+    }
+  })
+
   .state('tabsController', {
     url: '/:team_id/tab',
     templateUrl: 'templates/tabsController.html',

@@ -124,6 +124,13 @@ function($scope, $rootScope, $stateParams, $http) {
 
 }])
 
+.controller('coachCtrl',
+['$scope', '$rootScope', '$stateParams','$http',
+function($scope, $rootScope, $stateParams, $http) {
+	
+
+}])
+
 .controller('playerCtrl',
 ['$scope', '$rootScope', '$stateParams','$http',
 function($scope, $rootScope, $stateParams, $http) {
