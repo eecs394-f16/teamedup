@@ -122,6 +122,21 @@ function($scope, $rootScope, $stateParams, $http) {
 		message.show_comments = !message.show_comments;
 	}
 
+	$scope.newcomment = {};
+    $scope.postComment = function(index){
+    	console.log(index);
+     	var message = $scope.messages[index];
+    	message.comments.push($scope.newcomment.text);
+
+    	$http({
+			method: "GET",
+			url: 'http://teamedup.nudm.org/post_comment.php',
+			params: {message_id: index, comment: $scope.newcomment.text, team_id: $rootScope.team_id}
+		});
+
+    	$scope.newcomment = {};
+    };
+
 }])
 
 .controller('coachCtrl',

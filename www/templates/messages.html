@@ -33,7 +33,7 @@
             </p>
         </div>
         <div class="item item-divider item-input">
-          <input type="text" placeholder="Write a comment...">
+          <input type="text"  ng-model="newcomment.text" placeholder="Write a comment..." ng-keyup="$event.keyCode == 13 ? postComment($index) : null" class="dark-grey">
         </div>
       </div>
     </div>
