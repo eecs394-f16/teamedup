@@ -129,7 +129,7 @@ function($scope, $rootScope, $stateParams, $http) {
     	message.comments.push($scope.newcomment.text);
 
     	$http({
-			method: "GET",
+			method: "POST",
 			url: 'http://teamedup.nudm.org/post_comment.php',
 			params: {message_id: index, comment: $scope.newcomment.text, team_id: $rootScope.team_id}
 		});
@@ -142,7 +142,15 @@ function($scope, $rootScope, $stateParams, $http) {
 .controller('coachCtrl',
 ['$scope', '$rootScope', '$stateParams','$http',
 function($scope, $rootScope, $stateParams, $http) {
-	
+	$scope.coach = {};
+	$http({
+		method: 'GET',
+		url: 'http://teamedup.nudm.org/get_coach.php?team_id=' + $rootScope.team_id+"&coach_id="+ $rootScope.team_id,
+	}).then(function(response){
+		$scope.coach = response.data;
+		//console.log($scope.coach);
+	});
+
 
 }])
 
