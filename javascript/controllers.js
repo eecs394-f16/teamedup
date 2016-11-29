@@ -123,18 +123,23 @@ function($scope, $rootScope, $stateParams, $http) {
 	}
 
 	$scope.newcomment = {};
-    $scope.postComment = function(index){
-    	console.log(index);
-     	var message = $scope.messages[index];
-    	message.comments.push($scope.newcomment.text);
+
+    $scope.postComment = function(id, index){
 
     	$http({
 			method: "POST",
 			url: 'http://teamedup.nudm.org/post_comment.php',
-			params: {message_id: index, comment: $scope.newcomment.text, team_id: $rootScope.team_id}
+			params: {
+				message_id: id,
+				comment: $scope.newcomment.comment,
+				team_id: $rootScope.team_id
+			}
+		}).then(function(res) {
+			var message = $scope.messages[index];
+			message.comments.push(res.data);
 		});
 
-    	$scope.newcomment = {};
+		$scope.newcomment = {};
     };
 
 }])
