@@ -1,10 +1,22 @@
 angular.module('app.controllers', [])
 
 .controller('tabsCtrl',
-['$scope', '$rootScope', '$stateParams',
-function ($scope, $rootScope, $stateParams) {
+['$scope', '$rootScope', '$stateParams', '$state',
+function ($scope, $rootScope, $stateParams, $state) {
 	$rootScope.team_id = $stateParams.team_id;
-	$scope.team_id = $stateParams.team_id;
+	$scope.$on("TeamChange", function(evt,data){
+		$rootScope.team_id = data.team_id;
+		$scope.team_id = $rootScope.team_id;
+	});
+
+	$scope.tabClicked = function($event, the_state, the_team) {
+    	//"#/profile/more/"
+    	$event.preventDefault();
+		$rootScope.team_id = the_team;
+    	$state.transitionTo(the_state, {
+       		team_id: the_team
+    	});
+	}
 }])
 
 .controller('teamsCtrl',
@@ -19,6 +31,7 @@ function ($scope, $state, $rootScope, $window, $http, $stateParams) {
 
 	$scope.changeTeam = function(team_id) {
 		$rootScope.team_id = team_id;
+		$rootScope.$broadcast("TeamChange",{"team_id": $rootScope.team_id});
 		$state.go("tabsController.roster", {"team_id": $rootScope.team_id})
 	}
 }])

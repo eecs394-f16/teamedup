@@ -1,15 +1,15 @@
 <ion-view title="Back" id="page1" style="background-color:#ff0000;">
   <ion-tabs class="tabs-balanced tabs-icon-top" id="tabsController-tabs1">
-    <ion-tab title="Schedule" icon="ion-android-calendar" href="#/{{team_id}}/tab/cal" id="tabsController-tab1">
+    <ion-tab title="Schedule" icon="ion-android-calendar" ng-click="tabClicked($event, 'tabsController.calendar', team_id)" id="tabsController-tab1">
       <ion-nav-view name="tab1"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Roster" icon="ion-ios-football" href="#/{{team_id}}/tab/roster" id="tabsController-tab2">
+    <ion-tab title="Roster" icon="ion-ios-football" ng-click="tabClicked($event, 'tabsController.roster', team_id)" id="tabsController-tab2">
       <ion-nav-view name="tab2"></ion-nav-view>
     </ion-tab>
-     <ion-tab title="Messages" icon="ion-chatbubbles" href="#/{{team_id}}/tab/messages" id="tabsController-tab3">
+     <ion-tab title="Messages" icon="ion-chatbubbles" ng-click="tabClicked($event, 'tabsController.messages', team_id)" id="tabsController-tab3">
       <ion-nav-view name="tab3"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Coach" icon="ion-speakerphone" href="#/{{team_id}}/tab/coaches" id="tabsController-tab4">
+    <ion-tab title="Coach" icon="ion-speakerphone" ng-click="tabClicked($event, 'tabsController.coach', team_id)" id="tabsController-tab4">
       <ion-nav-view name="tab4"></ion-nav-view>
     </ion-tab>
   </ion-tabs>
