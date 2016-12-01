@@ -9,6 +9,8 @@
 	    die();
 	}
 	
+	$conn->query("SET time_zone = 'America/Chicago';");
+	
 	header('Access-Control-Allow-Origin: *');
 	header('Content-Type: application/json');
 	

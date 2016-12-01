@@ -9,7 +9,7 @@
 		    	$id = $row["id"];
 		    	
 		    	$comments = [];
-		    	if ($res = $conn->query("SELECT comments.*, parents.fname, parents.lname FROM comments LEFT JOIN parents ON parents.id = comments.parent_id WHERE team_id = 1 AND message_id = 36 ORDER BY comments.created_at DESC")) {
+		    	if ($res = $conn->query("SELECT comments.*, parents.fname, parents.lname FROM comments LEFT JOIN parents ON parents.id = comments.parent_id WHERE team_id = $team_id AND message_id = $id ORDER BY comments.created_at ASC")) {
 			    	while($r = $res->fetch_array(MYSQL_ASSOC)) {
 				    	$r["id"] = intval($r["id"]);
 				    	$comments[] = $r;
