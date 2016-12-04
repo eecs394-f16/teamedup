@@ -1,8 +1,8 @@
 <?php
 	
-	$servername = "mysql.nudm.org";
-	$username = "teamedup";
-	$password = "TeamRed2017!";
+	$servername = "INSERT_MYSQL_HOST";
+	$username = "INSERT_MYSQL_USERNAME";
+	$password = "INSERT_MYSQL_PASSWORD";
 	$conn = new mysqli($servername, $username, $password, "teamedup");
 	// Check connection
 	if ($conn->connect_error) {
