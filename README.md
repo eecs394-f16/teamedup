@@ -13,6 +13,8 @@ sudo npm install -g ionic cordova gulp-cli bower
 sudo gem install sass
 ```
 
+For more information on the Ionic Framework, and for help developing your app see [Ionic's Documentation](http://ionicframework.com/docs).
+
 ### Database
 The database should be a MySQL database. A SQL dump of all dummy data and the table creation scripts is in the project directory as `SQL_BACKUP.sql`.
 
@@ -40,7 +42,17 @@ bower install
 You can start a development server with the command `ionic serve`. This will let you debug you application in the web browser of your choice. This can "emulate" a mobile devices screen size if you would [like](https://developers.google.com/web/tools/chrome-devtools/device-mode/).
 
 ### Push to Ionic View
-You can push the current state of the app to Ionic View for testing with the command `ionic upload`. You will need anaccount with access to the ionic project for this command to work. It may ask you to log in.
+The first time you push to Ionic View you must create an `ionic.io` project. You may do so with the command:
+
+```
+ionic io init
+```
+
+You can push the current state of the app to Ionic View for testing with the command 
+
+```
+ionic upload
+```
 
 ### Install on Phone
 Depending on the platform, installing on a mobile device may vary. For more information, check out Ionic's [documentation](http://ionicframework.com/docs/v2/cli/run/). 
