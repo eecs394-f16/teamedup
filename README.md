@@ -1,4 +1,4 @@
-teamdeup
+teamedup
 ========
 
 An app that helps build community, connection, and friendship between adults who have the commonality of having kids in sports, by providing a way to exchange information and to message others. 
@@ -25,11 +25,6 @@ These scripts will run on any server that can serve PHP scripts. We used a share
 
 Throughout the frontend of the app, the backend api's url is prefixed by `http://teamedup.nudm.org`. Make sure to change this to the URL of your backend API.
 
-### Build Javascript and CSS
-Gulp is used to build javascript and CSS. `gulp javascript` builds the frontend javascript from the `/javascript` (excluding external libraries) and `gulp sass` builds the scss from the `/scss` directory into css.
-
-When developing, it may be helpful to use `gulp watch` to automatically build javascript and CSS on file changes.
-
 ### Packages
 We use both npm and bower, you can update packages with:
 
@@ -37,6 +32,12 @@ We use both npm and bower, you can update packages with:
 npm install
 bower install
 ```
+
+### Build Javascript and CSS
+Gulp is used to build javascript and CSS. `gulp javascript` builds the frontend javascript from the `/javascript` (excluding external libraries) and `gulp sass` builds the scss from the `/scss` directory into css.
+
+When developing, it may be helpful to use `gulp watch` to automatically build javascript and CSS on file changes.
+
 
 ### Developing in the Browser
 You can start a development server with the command `ionic serve`. This will let you debug you application in the web browser of your choice. This can "emulate" a mobile devices screen size if you would [like](https://developers.google.com/web/tools/chrome-devtools/device-mode/).
@@ -66,6 +67,15 @@ Depending on the platform, installing on a mobile device may vary. For more info
 ### Features Mocked
 - Because there is no login page, all requests are authenticated as the parent with the id = `1`.
 - The default routing of the app is to team_id = `1`. This should be generalized to take the first team that a user is authenticated to which may not always be `1`.
+
+## Features to be Implemented
+- Extending beyond the message board functionality to enable direct messaging between users
+- Virtual scoreboard that updates the score in real-time for users that are not at the game
+- Allow parents to edit their children's profiles (upload photo, add address, etc)
+- Update interface to allow for multiple coaches per team
+- Enable push notifications for messaging, schedule updates, etc.
+- Create an onboarding platform for coaches to create teams, enter roster information, and send out one-time-use invitation links
+- Create an onboarding flow for a first-time user where they create their own personal master profile
 
 ## Contributors
 Sonia Nigam, Daniel Nussbaum, Rudolf Newman
