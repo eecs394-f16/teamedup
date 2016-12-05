@@ -37,5 +37,11 @@ You can push the current state of the app to Ionic View for testing with the com
 ### Install on Phone
 Depending on the platform, installing on a mobile device may vary. For more information, check out Ionic's [documentation](http://ionicframework.com/docs/v2/cli/run/). 
 
-## Known Bugs, Issues, and Features Mocked
+## Known Bugs and Features Mocked
 
+### Bugs
+
+- If you switch to a team from the default, a back button appears which would let you switch back to the original team. However, because the `team_id` does not change in `$rootScope`, requests are not made properly for the original team.
+
+### Features Mocked
+- Because there is no login page, all requests are authenticated as the parent with the id = `1`.   
