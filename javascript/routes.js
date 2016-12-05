@@ -72,6 +72,4 @@ angular.module('app.routes', [])
 
 $urlRouterProvider.otherwise('/1/tab/roster')
 
-
-
 });

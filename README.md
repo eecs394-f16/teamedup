@@ -5,6 +5,14 @@ An app that helps build community, connection, and friendship between adults who
 
 ## Development
 
+### Environment
+You must have npm, gulp, bower, sass, ionic, and cordova installed.
+
+```
+sudo npm install -g ionic cordova gulp-cli bower
+sudo gem install sass
+```
+
 ### Database
 The database should be a MySQL database. A SQL dump of all dummy data and the table creation scripts is in the project directory as `SQL_BACKUP.sql`.
 
@@ -44,4 +52,5 @@ Depending on the platform, installing on a mobile device may vary. For more info
 - If you switch to a team from the default, a back button appears which would let you switch back to the original team. However, because the `team_id` does not change in `$rootScope`, requests are not made properly for the original team.
 
 ### Features Mocked
-- Because there is no login page, all requests are authenticated as the parent with the id = `1`.   
+- Because there is no login page, all requests are authenticated as the parent with the id = `1`.
+- The default routing of the app is to team_id = `1`. This should be generalized to take the first team that a user is authenticated to which may not always be `1`.
