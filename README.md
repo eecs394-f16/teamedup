@@ -54,3 +54,8 @@ Depending on the platform, installing on a mobile device may vary. For more info
 ### Features Mocked
 - Because there is no login page, all requests are authenticated as the parent with the id = `1`.
 - The default routing of the app is to team_id = `1`. This should be generalized to take the first team that a user is authenticated to which may not always be `1`.
+
+## Contributors
+Sonia Nigam
+Daniel Nussbaum
+Rudolf Newman
